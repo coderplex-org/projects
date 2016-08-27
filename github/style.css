@@ -7,7 +7,7 @@ body {
 }
 
 .main {
-  background: skyblue;
+  /*background: skyblue;*/
 }
 
 .name {
@@ -16,4 +16,10 @@ body {
 
 .company {
   font-weight: bold;
+}
+
+.search-container {
+  background: #DDD;
+  padding: 10px 0;
+  margin-bottom: 10px;
 }

@@ -1,5 +1,3 @@
-var url = 'https://api.github.com/users/vramana'
-
 function handleProfileData(data) {
   $('.avatar img').attr('src', data.avatar_url);
   $('.name').text(data.name);
@@ -10,4 +8,13 @@ function handleProfileData(data) {
   $('.blog a').text(data.blog);
 }
 
-$.getJSON(url, handleProfileData)
+
+function handleSearch() {
+  var username = $('.search').val()
+  var url = 'https://api.github.com/users/' + username
+  // console.log(username)
+  $.getJSON(url, handleProfileData)
+}
+
+
+$('.search-btn').click(handleSearch)
