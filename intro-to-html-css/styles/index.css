@@ -1,0 +1,81 @@
+.app {
+    min-height: 100vh;
+    background-color: #3B4039;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.editor {
+    width: 600px;
+    height: 250px;
+    margin-bottom: 10px;
+}
+
+.rendered {
+    width: 600px;
+    min-height: 350px;
+    padding: 2px;
+    background-color: white;
+}
+
+.html-text {
+    margin-top: 10px;
+    background-color: white;
+}
+
+.CodeMirror {
+    height: 250px;
+}
+
+.highlight {
+    color: #DAFFE1;
+    font-size: 25px;
+    background-color: #195E46;
+    padding: 10px;
+}
+
+
+
+/* Arrows */
+
+.left-arrow, .right-arrow {
+    align-self: center;
+    background-color: #4B5249;
+    color: #E5FFEB;
+    padding: 50px;
+    box-shadow: 0px 0px 10px 10px rgba(0,0,0,0);
+    text-shadow: 0px 0px 10px rgba(200,225,210, 0);
+    transition: background, color, text-shadow, box-shadow .5s;
+}
+
+.left-arrow:hover, .right-arrow:hover {
+    background-color: #69BF6D;
+    color: #E5FFEB;
+    text-shadow: 0px 0px 50px rgba(200,225,210, .1);
+    box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    
+}
+
+
+@keyframes glow{
+    0% {
+        background-color: #4B5249;
+        color: #E5FFEB;
+        text-shadow: 0px 0px 10px rgba(200,225,210, 0.1);
+    }
+    50%{
+        background-color: #69BF6D;
+        color: #E5FFEB;
+        text-shadow: 0px 0px 50px rgba(200,225,210, 1);
+        box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.1);
+    }
+    
+    100% {
+       background-color: #4B5249;
+       color: #E5FFEB;
+       text-shadow: 0px 0px 10px rgba(200,225,210, 0.1);
+    }
+}
+
