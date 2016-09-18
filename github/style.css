@@ -19,7 +19,50 @@ body {
 }
 
 .search-container {
-  background: #DDD;
-  padding: 10px 0;
+  background: #3C4146;
+  padding: 20px 35px;
   margin-bottom: 10px;
+  color:#EEF4FC;
+  border-top:2px solid #4078C0;
+}
+.search-container a span {
+	font-size: .7em;
+	color: #ccc;
+}
+.search-container a{
+	color: #ccc;
+}
+.form-inline .form-control {
+	width: 100%;
+}
+#logo {
+	font-size: 1.5em !important;
+}
+#logo:hover {
+	color:#62E3FF;
+	text-decoration: none;
+}
+.top {
+	padding-top: 9px;
+}
+.version {
+	font-size: .5em;
+	color: #888;
+}
+.btn {
+	width: 100%;
+}
+
+.btn:focus {
+  outline: none !important;
+}
+
+.form-control:focus {
+    border-color: none; 
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow:none;
+}
+.form-control {
+	border-radius: 3px;
 }
