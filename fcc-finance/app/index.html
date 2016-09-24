@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Intro to HTML and CSS</title>  
+      <!-- Latest compiled and <minifie></minifie>d CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" >
+    
+    <link rel="stylesheet" href="styles/main.css" >
+    
+  </head>
+  <body>
+    <!--Navigation bar form-->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">FCC Finance</a>
+        </div>      
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transactions <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="fa fa-calendar"></i>&nbsp; Calender</a></li>
+                <li><a href="#"><i class="fa fa-bar-chart"></i>&nbsp; Charts</a></li>
+                <ul class="charts-submenus" >
+                  <li class="dropdown-header">Account History</li>
+                  <li class="dropdown-header">Tag History</li>
+                  <li class="dropdown-header">Tags Percentages</li>
+                </ul>
+                <li><a href="#"><i class="fa fa-download"></i>&nbsp; Import</a></li>
+                <li><a href="#"><i class="fa fa-search"></i>&nbsp; Search</a></li>
+              </ul>
+            </li>          
+          </ul>
+          
+          
+          <ul class="nav navbar-nav">
+            <form class="navbar-form">
+              <select type="text" class="form-control" id="type">
+                <option>Income</option>
+                <option>Expense</option>
+                <option>Transfer</option>
+                <option>Balance Reset</option>
+              </select>
+              <input type="number" step=100 class="form-control amount" placeholder="Amount">
+              <input type="text" class="form-control tag" placeholder="Tag">
+              <input type="text" class="form-control type" placeholder="Description">
+              <input type="text" class="form-control account" placeholder="Account">
+              <input type="date" class="form-control date">
+              <button type="submit" class="btn btn-success">Add</button>
+            </form>
+          </ul>
+          
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Register</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+
+      </div>
+    </nav>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
