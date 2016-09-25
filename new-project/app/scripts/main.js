@@ -1,76 +1,94 @@
-/*!
- *
- *  Web Starter Kit
- *  Copyright 2015 Google Inc. All rights reserved.
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *    https://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License
- *
+
+/**
+ *  Objectives
+ * 
+ *  1. Build Circle
+ *  2. Place Elements on Circle
+ *  3. Make elements Circle .
+ *  4. Implement Zoom
  */
-/* eslint-env browser */
-(function() {
-  'use strict';
 
-  // Check to make sure service workers are supported in the current browser,
-  // and that the current page is accessed from a secure origin. Using a
-  // service worker from an insecure origin will trigger JS console errors. See
-  // http://www.chromium.org/Home/chromium-security/prefer-secure-origins-for-powerful-new-features
-  var isLocalhost = Boolean(window.location.hostname === 'localhost' ||
-      // [::1] is the IPv6 localhost address.
-      window.location.hostname === '[::1]' ||
-      // 127.0.0.1/8 is considered localhost for IPv4.
-      window.location.hostname.match(
-        /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
-      )
-    );
 
-  if ('serviceWorker' in navigator &&
-      (window.location.protocol === 'https:' || isLocalhost)) {
-    navigator.serviceWorker.register('service-worker.js')
-    .then(function(registration) {
-      // updatefound is fired if service-worker.js changes.
-      registration.onupdatefound = function() {
-        // updatefound is also fired the very first time the SW is installed,
-        // and there's no need to prompt for a reload at that point.
-        // So check here to see if the page is already controlled,
-        // i.e. whether there's an existing service worker.
-        if (navigator.serviceWorker.controller) {
-          // The updatefound event implies that registration.installing is set:
-          // https://slightlyoff.github.io/ServiceWorker/spec/service_worker/index.html#service-worker-container-updatefound-event
-          var installingWorker = registration.installing;
+var data= {
+    "students": [
+      {
+        name: "Manisha",
+        class: 6,
+        age: 12,
+      },
+      {
+        name: "Kapil",
+        class: 8,
+        age: 15,
+      },
+      {
+        name: "Ramana",
+        class: 10,
+        age: 14,
+      },
+      {
+        name: "Siva",
+        class: 16,
+        age: 2,
+      },
+      {
+        name: "Vikky",
+        class: 1,
+        age: 3,
+      },
+      {
+        name: "Mani",
+        class: 15,
+        age: 12,
+      },
+      {
+        name: "name1",
+        class: 15,
+        age: 12,
+      },
+      {
+        name: "name2",
+        class: 15,
+        age: 12,
+      }
+    ]
+  };
+  
+var svgContainer = (
+  d3.select("body")
+    .append("svg")
+    .attr("width", 1000)
+    .attr("height", 600)
+  );
 
-          installingWorker.onstatechange = function() {
-            switch (installingWorker.state) {
-              case 'installed':
-                // At this point, the old content will have been purged and the
-                // fresh content will have been added to the cache.
-                // It's the perfect time to display a "New content is
-                // available; please refresh." message in the page's interface.
-                break;
+var length = data.students.length;
 
-              case 'redundant':
-                throw new Error('The installing ' +
-                                'service worker became redundant.');
+function createCirle(text, i) {
+  var theta = (i + 1)/length * 2 * Math.PI;
+  var radius = 100;
+  
+  var posX = 600 + radius * Math.sin(theta);
+  var posY = 300 + radius * Math.cos(theta)
 
-              default:
-                // Ignore
-            }
-          };
-        }
-      };
-    }).catch(function(e) {
-      console.error('Error during service worker registration:', e);
+  svgContainer.append("circle")
+    .attr("cx", posX)
+    .attr("cy", posY)
+    .attr("r", 50)
+    .style("stroke", "green")
+    .style("fill", "white")
+    .append("text")
+    .on("click", function () {
+      alert("clicked");
     });
-  }
+  
+  svgContainer.append("text")
+    .attr("x", posX-25)
+    .attr("y", posY)
+    .text(text);
+    
+}
 
 
-})();
+data.students.forEach(function (student, i) { 
+  createCirle(student.name, i);
+});
