@@ -55,17 +55,16 @@ var data= {
   };
   
 var svgContainer = (
-  d3.select("body")
-    .append("svg")
+  d3.select("svg")
     .attr("width", 1000)
     .attr("height", 600)
   );
 
 var length = data.students.length;
 
-function createCirle(text, i) {
+function createCirle(text, i, key) {
   var theta = (i + 1)/length * 2 * Math.PI;
-  var radius = 100;
+  var radius = 200 * (length + 1) / length;
   
   var posX = 600 + radius * Math.sin(theta);
   var posY = 300 + radius * Math.cos(theta)
@@ -74,18 +73,39 @@ function createCirle(text, i) {
     .attr("cx", posX)
     .attr("cy", posY)
     .attr("r", 50)
-    .style("stroke", "green")
-    .style("fill", "white")
+    .style("fill", "#2b98f0")
     .append("text")
-    .on("click", function () {
-      alert("clicked");
-    });
+    .style("color", "red");
   
   svgContainer.append("text")
     .attr("x", posX-25)
     .attr("y", posY)
-    .text(text);
-    
+    .attr("fill", "white")
+    .style("--webkit-user-select", "none")
+    .text(text)
+    .on("click", function () {
+      // console.log(data.students[i]);
+      var historyKey = preziHistory[preziHistory.length - 1];
+      preziHistory.push(historyKey.concat(key));
+      render();
+    });
+}
+
+var preziHistory = [
+  []
+];
+
+function render() {
+  var historyKey = preziHistory[preziHistory.length - 1];
+  
+  // Remove Old DOM
+  
+  svgContainer.selectAll("*").remove();
+  
+  // REnder New DOM
+  
+  
+  
 }
 
 
