@@ -85,6 +85,11 @@ function createCirle(text, i, key) {
     .text(text)
     .on("click", function () {
       // console.log(data.students[i]);
+      
+      data.students.forEach(function (student, i) { 
+        createCirle(student.name, i, i);
+      });
+      
       var historyKey = preziHistory[preziHistory.length - 1];
       preziHistory.push(historyKey.concat(key));
       render();
@@ -92,15 +97,30 @@ function createCirle(text, i, key) {
 }
 
 var preziHistory = [
-  []
+  [ 'students' ]
 ];
 
 function render() {
   var historyKey = preziHistory[preziHistory.length - 1];
+  console.log(historyKey);
   
   // Remove Old DOM
   
   svgContainer.selectAll("*").remove();
+  
+  var newData = data;
+  
+  historyKey.forEach(function (key){
+    newData = newData[key];
+    console.log(newData);
+  });
+  
+  if(Array.isArray(newData)){
+    
+  }else{
+    var k = Object.keys(newData);
+    
+  }
   
   // REnder New DOM
   
@@ -110,5 +130,5 @@ function render() {
 
 
 data.students.forEach(function (student, i) { 
-  createCirle(student.name, i);
+  createCirle(student.name, i, data.student);
 });
