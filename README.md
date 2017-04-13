@@ -6,6 +6,7 @@ Projects
 
 - Intro to HTML/CSS - https://fcc-hyd.github.io/projects/intro-to-html-css/
 
-- Linklet App 
-  - Repo - https://github.com/vinaypuppal/linklet-app/
+- Linklet
+  - App Repo - https://github.com/vinaypuppal/linklet-app/
   - App Link - https://linklet.ml
+  - API Repo - https://github.com/vinaypuppal/linklet-api/
