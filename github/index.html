@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
+    <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Github Profile Search</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.png"/>
+
 
     <!-- Bootstrap Resources -->
 
@@ -21,45 +24,53 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+    <!-- fontawesome.io -->
+    <script src="https://use.fontawesome.com/2af641d54d.js"></script>
+
     <!-- Project Resources -->
     <link rel="stylesheet" href="style.css" type="text/css" />
 
-  </head>
-  <body>
-    <div class="container">
-      <div class="row search-container">
-        <div class="col-lg-4">
-          <input type="text" class="search form-control" placeholder="Enter Username" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="row search-container">
+                <div class="form-inline">
+                    <div class="form-group col-sm-3">
+                      <h4><a href=""><i id="logo" class="fa fa-github-alt" aria-hidden="true"></i></a> Search GitHub Profile <span class="version">V 0.1</span></h4>
+                    </div>
+                    <div class="form-group col-sm-5 top">
+                      <input type="text" class="search form-control" placeholder="Enter Username" autofocus="">
+                    </div>
+                    <div class="form-group col-sm-2 top">
+                        <button type="submit" class="btn btn-info search-btn">Submit</button>    
+                    </div>
+                    <div class="col-sm-2 top" style="padding-top:15px;">
+                        <a href="https://github.com/fcc-hyd/projects" target="_blank"><i class="fa fa-github"></i> <span>GitHub Repository</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3 sidebar">
+                    <div class="avatar">
+                        <img class="img img-responsive img-rounded" src="">
+                    </div> 
+                </div>
+                <div class="col-sm-9 main">
+                    <h2 class="name"></h2>
+                    <div class="username"></div>
+                    <div class="bio"></div>
+                    <hr>
+                    <div class="company"></div>
+                    <div class="location"></div>
+                    <div class="email"><a target="_blank"></a></div>
+                    <div class="blog"><a href="" target="_blank"></a></div>
+                    <div class="url"><a href="" target="_blank"></a></div>                  
+                </div>
+            </div>
         </div>
-        <div class="col-lg-2">
-          <button class="btn btn-default search-btn">Search</button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-3 sidebar">
-          <div class="avatar">
-            <img class="img img-responsive img-rounded" src=""></img>
-          </div>
-          <h2 class="name"></h2>
-          <div class="username"></div>
-          <div class="bio">
-            <a></a>
-          </div>
-          <hr />
-          <div class="company"></div>
-          <div class="location"></div>
-          <div class="email">
-            <a></a>
-          </div>
-          <div class="blog">
-            <a></a>
-          </div>
-          <!-- <div>Joined on 24 December 2012</div> -->
-        </div>
-        <div class="col-lg-9 main">
-        </div>
-      </div>
-    </div>
+
     <script type="text/javascript" src="main.js"></script>
-  </body>
+    </body>
 </html>
